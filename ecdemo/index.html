@@ -14,17 +14,20 @@ gtag("js", new Date());
 gtag("config", "G-PM9X8XDHRZ");
 </script>
 <script>
-
-function search() {	  
-   var keyword = document.getElementById('search').value
-   alert(keyword);
-
-	// 送出搜尋事件紀錄
-	gtag("event", "search", {
-		"search_term": [keyword]
-	});
-};
-
+	function search() {	  
+	   var keyword = document.getElementById('search').value
+	   
+	   if(keyword!='') {
+			window.location.href="landing-page.html";
+			// 送出搜尋事件紀錄
+			gtag("event", "search", {
+				"search_term": [keyword]
+			});
+		}
+		else if (keyword=='') {
+			alert("請填寫搜尋內容");
+		}
+	};
 </script>
 </head>
 <body>
