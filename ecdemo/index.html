@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>Google Analytics 事件追蹤範例</title>
+<!-- 以下是 GA 追蹤碼的基本安裝 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PM9X8XDHRZ"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments)};
+gtag("js", new Date());
+
+gtag("config", "G-PM9X8XDHRZ");
+</script>
+<script>
+
+function search() {	  
+   var keyword = document.getElementById('search').value
+   alert(keyword);
+
+	// 送出搜尋事件紀錄
+	gtag("event", "search", {
+		"search_term": $keyword
+	});
+}
+
+</script>
+</head>
+<body>
+	<h2>緩光臨~</h2>
+	<input type="text" id="search" style="border:1; border-radius:10px; width:350px; height:45px" placeholder="你想找什麼?">
+	<a href="landing-page.html"><button onclick="search();" style="border:0; background-color:gold; border-radius:10px; width:150px; height:50px; font-size: 100%; font-weight: bold;">搜尋</button></a>
+</body>
+</html>

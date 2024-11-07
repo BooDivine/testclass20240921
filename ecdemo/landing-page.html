@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>Landing Page - GA 電子商務範例</title>
+<!-- 以下是 GA 追蹤碼的基本安裝 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PM9X8XDHRZ"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments)};
+gtag("js", new Date());
+
+gtag("config", "G-PM9X8XDHRZ");
+// 以下和電子商務有關的追蹤程式
+// 追蹤：產品展示次數
+gtag(
+	"event", "view_item_list", {
+		"items":[
+			{
+				"item_id": "123456", // 產品編號
+				"item_name": "iPhone 16", // 產品名稱
+			},
+			{
+				"item_id": "654321",
+				"item_name": "iPhone 16 Pro Max",
+			}
+		]
+	}
+);
+</script>
+
+</head>
+<body>
+	<div style="display: flex; justify-content: space-evenly;" >
+		<div>
+			<h2 style="text-align:center;">iPhone 16</h2>
+			<a href="product-page.html">
+			<img src="https://www.apple.com/v/iphone/compare/ah/images/overview/compare_iphone16_white__gjb82vhi5be6_large.jpg">
+			</a>
+		</div>
+		
+		<div>
+			<h2 style="text-align:center;">iPhone 16 Pro Max</h2>
+			
+			<img src="https://www.apple.com/v/iphone/compare/ah/images/overview/compare_iphone16_pro_max_white_titanium__3gd4nclpggyi_large.jpg">
+			
+		</div>
+	</div>
+	
+</body>
+</html>

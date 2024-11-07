@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>Google Analytics 基本範例</title>
+<!-- 以下是 GA 追蹤碼的基本安裝 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PM9X8XDHRZ"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments)};
+gtag("js", new Date());
+
+gtag("config", "G-PM9X8XDHRZ");
+// 以下和電子商務有關的追蹤程式
+// 追蹤：完成購物
+gtag("event", "purchase", {
+	"transaction_id": "CC2407110000001",
+	// 以上為必填，以下選填
+	"value": 29900,
+	"currency": "TWD",
+	"tax": "0",
+	"shipping": "0",
+	// items 為購買的產品資訊，必填
+	"items":[
+		{
+			"item_id": "產品編號 9487", // 產品編號
+			"item_name": "兔兔草", // 產品名稱
+			// 以上為必填，以下選填
+			"item_brand": "Apple", // 產品品牌
+			"item_category": "iPhone", // 產品分類
+			"item_variant": "128GB" // 產品選項
+			"quantity": 1,
+			"price": 29900
+		}
+	]
+});
+</script>
+<style>
+	table {border: 1px solid gray; width: 600px; background-color: rgb(0, 0, 255, 20%);}
+	tr, td {border: 1px solid gray;}
+</style>
+</head>
+<body>
+	<div style="display: flex; justify-content: space-evenly;" >
+		<div>
+			<h2>我的訂單</h2>
+			<h4 style="color:red">訂單成立，感謝您的購買</h4>
+			<table id="table1">
+				<tr>
+					<td colspan="4" style="border: 0px"><h4>交易序號: CC2407110000001</h4></td>
+				</tr>
+				<tr id="row1" style = "font-weight: bold;">
+					<td>商品</td>
+					<td>品名與規格</td>
+					<td>單價</td>
+					<td>數量</td>
+				</tr>	
+				<tr id="row2">
+					<td><img src="https://www.apple.com/v/iphone/compare/ah/images/overview/compare_iphone16_white__gjb82vhi5be6_large.jpg" style = "width:100px;"></td>
+					<td>iPhone 16 白色 128GB</td>
+					<td>29,900</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td colspan="4" style="border: 0px; text-align:right">合計金額: 29,900</td>
+				</tr>
+			</table>
+			
+			<h4>收件資訊與支付方式</h4>
+			<p>收件人: Anna</p>
+			<p>收件人聯絡電話: 0912345678</p>
+			<p>支付工具: 門市繳費</p>
+		</div>
+		<div style="align-content: flex-end;">
+			<a href="landing-page.html"><button style = "border:0; background-color:gold; border-radius:10px; width:150px; height:50px; font-size: 100%; font-weight: bold;">回首頁</button></a>
+		</div>
+	</div>
+</body>
+</html>

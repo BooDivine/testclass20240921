@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>Product Page - GA 電子商務範例</title>
+<!-- 以下是 GA 追蹤碼的基本安裝 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PM9X8XDHRZ"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments)};
+gtag("js", new Date());
+
+gtag("config", "G-PM9X8XDHRZ");
+// 以下和電子商務有關的追蹤程式
+// 追蹤：產品詳細資訊的瀏覽次數
+gtag("event", "view_item", {
+	"currency": "TWD",
+	"value": 29900,
+	"items":[
+		{
+			"item_id": "123456", // 產品編號
+			"item_name": "iPhone 16", // 產品名稱
+			// 以上為必填，以下選填
+			"item_brand": "Apple", // 產品品牌
+			"item_category": "iPhone", // 產品分類
+			"item_variant": "128GB" // 產品選項
+		}
+	]
+});
+</script>
+</head>
+<body>
+	<div style="display: flex; justify-content: space-evenly;" >
+		<div>
+			<h2>iPhone 16</h2>
+			<img src="https://www.apple.com/v/iphone/compare/ah/images/overview/compare_iphone16_white__gjb82vhi5be6_large.jpg">
+			<h4>鋁金屬設計<br>最新一代超瓷晶盾面板<br>注色玻璃機背</h4>
+		</div>
+		<div>
+			<p>
+				<h4>尺寸與重量</h4>高度：147.6 公釐(5.81 吋)<br>寬度：71.6 公釐(2.82 吋)<br>厚度：7.80 公釐(0.31 吋)<br>重量：170 公克(6.00 盎司)<hr>
+				<h4>顯示器</h4>超 Retina XDR 顯示器<br>6.1 吋 (對角線) 全螢幕 OLED 顯示器<br>2556 x 1179 像素，460 ppi 解析度<hr>
+				<h4>晶片</h4>A18 晶片<br>全新 6 核心 CPU 配備 2 個效能核心與 4 個節能核心<br>全新 5 核心 GPU<br>全新 16 核心神經網路引擎<hr>
+			</p>
+			<a href="cart-page.html"><button style = "border:0; background-color:gold; border-radius:10px; width:150px; height:50px; font-size: 100%; font-weight: bold;">加入購物車</button></a>
+		</div>
+	</div>
+</body>
+</html>
