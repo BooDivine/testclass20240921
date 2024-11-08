@@ -15,7 +15,7 @@ gtag("config", "G-PM9X8XDHRZ");
 // 以下和電子商務有關的追蹤程式
 // 追蹤：完成購物
 gtag("event", "purchase", {
-	"transaction_id": "CC2407110000001",
+	"transaction_id": [cc],
 	// 以上為必填，以下選填
 	"value": 29900,
 	"currency": "TWD",
@@ -48,7 +48,7 @@ gtag("event", "purchase", {
 			<h4 style="color:red">訂單成立，感謝您的購買</h4>
 			<table id="table1">
 				<tr>
-					<td colspan="4" style="border: 0px"><h4>交易序號: CC2407110000001</h4></td>
+					<td colspan="4" style="border: 0px"><h4 id="ccno"></h4></td>
 				</tr>
 				<tr id="row1" style = "font-weight: bold;">
 					<td>商品</td>
@@ -76,5 +76,20 @@ gtag("event", "purchase", {
 			<a href="index.html"><button style = "border:0; background-color:gold; border-radius:10px; width:150px; height:50px; font-size: 100%; font-weight: bold;">回首頁</button></a>
 		</div>
 	</div>
+<script>
+	//產生交易序號
+	var now =(new Date()); // 取得當前時間
+	var date = now.toISOString().split('T')[0];
+
+	function getRandomInt(min, max) {
+	  min = Math.ceil(min);
+	  max = Math.floor(max);
+	  return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+	}
+
+	var cc = ['CC', date.substring(2,4), date.substring(5,7), date.substring(8,10), getRandomInt(1,9999999)].join('');
+	document.getElementById("ccno").innerHTML = ['交易序號: ', cc].join('');
+	
+</script>
 </body>
 </html>
