@@ -98,6 +98,7 @@ gtag("event", "purchase", {
 			<p id="custname"></p>
 			<p id="phone"></p>
 			<p id="payment"></p>
+			<p id="orderdate"></p>
 		</div>
 		<div style="align-content: flex-end;">
 			<a href="index.html"><button style = "border:0; background-color:gold; border-radius:10px; width:150px; height:50px; font-size:100%; font-weight:bold; color:black;">回首頁</button></a>
@@ -108,6 +109,7 @@ gtag("event", "purchase", {
 	document.getElementById("custname").innerHTML = ['收件人: ', custname].join('');
 	document.getElementById("phone").innerHTML = ['收件人聯絡電話: ', phone].join('');
 	document.getElementById("payment").innerHTML = ['付款方式: ', payment].join('');
+	document.getElementById("orderdate").innerHTML = ['訂單時間: ', now.toLocaleString()].join('');
 </script>
 </body>
 </html>
