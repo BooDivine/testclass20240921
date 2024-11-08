@@ -12,6 +12,21 @@ function gtag(){dataLayer.push(arguments)};
 gtag("js", new Date());
 
 gtag("config", "G-PM9X8XDHRZ");
+
+//取得前一頁的參數值
+var getUrlString = location.href;
+var url = new URL(getUrlString);
+var custname = url.searchParams.get('custname');
+var phone = url.searchParams.get('phone');
+var payment = url.searchParams.get('payment');
+
+if (payment == 'pre'){
+	payment = "門市繳費";
+}
+else if (payment == 'post'){
+	payment = "貨到付款";
+};
+
 //產生交易序號
 var now =(new Date()); // 取得當前時間
 var date = now.toISOString().split('T')[0];
@@ -80,9 +95,9 @@ gtag("event", "purchase", {
 			</table>
 			
 			<h4>收件資訊與付款方式</h4>
-			<p>收件人: Anna</p>
-			<p>收件人聯絡電話: 0912345678</p>
-			<p>付款方式: 門市繳費</p>
+			<p id="custname"></p>
+			<p id="phone"></p>
+			<p id="payment"></p>
 		</div>
 		<div style="align-content: flex-end;">
 			<a href="index.html"><button style = "border:0; background-color:gold; border-radius:10px; width:150px; height:50px; font-size:100%; font-weight:bold; color:black;">回首頁</button></a>
@@ -90,6 +105,9 @@ gtag("event", "purchase", {
 	</div>
 <script>
 	document.getElementById("ccno").innerHTML = ['交易序號: ', cc].join('');
+	document.getElementById("custname").innerHTML = ['收件人: ', custname].join('');
+	document.getElementById("phone").innerHTML = ['收件人聯絡電話: ', phone].join('');
+	document.getElementById("payment").innerHTML = ['付款方式: ', payment].join('');
 </script>
 </body>
 </html>
