@@ -12,6 +12,18 @@ function gtag(){dataLayer.push(arguments)};
 gtag("js", new Date());
 
 gtag("config", "G-PM9X8XDHRZ");
+//產生交易序號
+var now =(new Date()); // 取得當前時間
+var date = now.toISOString().split('T')[0];
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+}
+
+var cc = ['CC', date.substring(2,4), date.substring(5,7), date.substring(8,10), getRandomInt(1,9999999)].join('');
+
 // 以下和電子商務有關的追蹤程式
 // 追蹤：完成購物
 gtag("event", "purchase", {
@@ -77,19 +89,7 @@ gtag("event", "purchase", {
 		</div>
 	</div>
 <script>
-	//產生交易序號
-	var now =(new Date()); // 取得當前時間
-	var date = now.toISOString().split('T')[0];
-
-	function getRandomInt(min, max) {
-	  min = Math.ceil(min);
-	  max = Math.floor(max);
-	  return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
-	}
-
-	var cc = ['CC', date.substring(2,4), date.substring(5,7), date.substring(8,10), getRandomInt(1,9999999)].join('');
 	document.getElementById("ccno").innerHTML = ['交易序號: ', cc].join('');
-	
 </script>
 </body>
 </html>
